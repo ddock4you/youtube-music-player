@@ -3,6 +3,8 @@
    License: none (public domain)
 */
 
+// * { font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif'; }
+
 html,
 body,
 div,
@@ -106,6 +108,7 @@ section {
     display: block;
 }
 body {
+    font-family: "Spoqa Han Sans", "Sans-serif";
     line-height: 1;
 }
 ol,

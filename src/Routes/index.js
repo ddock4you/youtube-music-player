@@ -1,13 +1,16 @@
 import React from "react";
 import { BrowserRouter as Route, Redirect, Switch } from "react-router-dom";
+import NowList from "./NowList";
+import PlayList from "./PlayList";
+import Search from "./Search";
 
 const Routes = () => {
     return (
         <Switch>
-            <Route path="/" exact />
-            <Route path="/playlist" exact />
-            <Route path="/search" exact />
-            <Redirect from="*" to="/" />
+            <Route exact path="/" component={NowList} />
+            <Route exact path="/playlist" component={PlayList} />
+            <Route exact path="/search" component={Search} />
+            {/* <Redirect from="*" to="/" /> */}
         </Switch>
     );
 };
