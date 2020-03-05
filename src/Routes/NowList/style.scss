@@ -1,6 +1,17 @@
 .now-list {
     box-sizing: border-box;
+    display: flex;
     height: 100vh;
-    padding: 50px 50px 0;
+    padding: 110px 50px 75px;
     background-color: #000;
+    .cover {
+        flex: 4;
+        width: 40%;
+        background-color: lightpink;
+    }
+    .music-content {
+        flex: 3;
+        width: 40%;
+        background-color: gold;
+    }
 }

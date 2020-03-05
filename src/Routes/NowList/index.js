@@ -15,7 +15,6 @@ const NowList = () => {
 
     return (
         <div className={`now-list ${javasc}`}>
-            NowList Test
             <div className="cover">이미지 영역</div>
             <div className="music-content">
                 <label>
