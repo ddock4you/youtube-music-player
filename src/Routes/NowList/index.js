@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import axios from "axios";
 import dotenv from "dotenv";
 
+import { fake } from "../../fake";
 import "./style.scss";
 
 dotenv.config();
@@ -41,22 +42,29 @@ const NowList = () => {
     };
 
     // const getMovieInfo = async videoId => {
-    //     const APIKEY = "AIzaSyCC2pMVczqa5crA9qxUFnceNC_0p2gV7gg";
-    //     const APIURL = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${APIKEY}&part=snippet,contentDetails,statistics,status`;
-    //     const video = await axios.get(APIURL);
+    //     try {
+    //         const APIKEY = "AIzaSyCV-tsD9TwSupW3pKjwGR33jKvsCpDPMu0";
+    //         const APIURL = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${APIKEY}&part=snippet,contentDetails,statistics,status`;
+    //         const video = await axios.get(APIURL);
 
-    //     // if (video.status === 200 && video.data.items.length >= 1) {
-    //     //     const makeThumnail =() => {
-    //     //         let thumnail = '';
-    //     //         video.data.items[0].snippet.thumbnails.maxres
-    //     //         const {data : {items : {0 : {kind}}}} = video;
+    //         // if (video.status === 200 && video.data.items.length >= 1) {
+    //         //     const makeThumnail =() => {
+    //         //         let thumnail = '';
+    //         //         video.data.items[0].snippet.thumbnails.maxres
+    //         //         const {data : {items : {0 : {kind}}}} = video;
 
-    //     //     }
-    //     // }
+    //         //     }
+    //         // }
 
-    //     return console.log(video);
+    //         return console.log(video);
+    //     } catch (e) {
+    //         console.error(e);
+    //     }
     // };
     // getMovieInfo("yd3KYOei8o4");
+
+    const { kind } = fake.items[0];
+    console.log(kind);
 
     return (
         <div className={`now-list ${javasc}`}>

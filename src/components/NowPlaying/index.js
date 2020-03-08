@@ -1,6 +1,8 @@
 import React from "react";
+// import { fake } from "../../../fake";
 
 const NowPlaying = () => {
+    // console.log(kind);
     return (
         <div className="nowplaying">
             <div class="nowplaying-navi1">
