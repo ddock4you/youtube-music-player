@@ -1,40 +1,38 @@
-export const playlist = [
+export const musicList = [
     {
         base: {
             name: "기본",
             list: [
                 {
                     id: 0,
-                    songName:
+                    title:
                         "We Can't Stop - Miley Cyrus (Boyce Avenue feat. Bea Miller cover) on Spotify & Apple",
                     singer: "Boyce Avenue",
-                    videoKey: "uzgp65UnPxA",
-                    thumbnail:
+                    key: "uzgp65UnPxA",
+                    jacket:
                         "https://i.ytimg.com/vi/uzgp65UnPxA/maxresdefault.jpg",
-                    max_thumbnail:
+                    bigJacket:
                         "https://i.ytimg.com/vi/uzgp65UnPxA/maxresdefault.jpg",
                     duration: "04:30"
                 },
                 {
                     id: 1,
-                    songName: "Charlie Puth - Attention [Official Video]",
+                    title: "Charlie Puth - Attention [Official Video]",
                     singer: "Charlie Puth",
-                    videoKey: "nfs8NYg7yQM",
-                    thumbnail:
-                        "https://i.ytimg.com/vi/nfs8NYg7yQM/hqdefault.jpg",
-                    max_thumbnail:
+                    key: "nfs8NYg7yQM",
+                    jacket: "https://i.ytimg.com/vi/nfs8NYg7yQM/hqdefault.jpg",
+                    bigJacket:
                         "https://i.ytimg.com/vi/nfs8NYg7yQM/hqdefault.jpg",
                     duration: "03:52"
                 },
                 {
                     id: 2,
-                    songName:
-                        "Pharrell Williams - Happy (Official Music Video)",
+                    title: "Pharrell Williams - Happy (Official Music Video)",
                     singer: "PharrellWilliamsVEVO",
-                    videoKey: "ZbZSe6N_BXs",
-                    thumbnail:
+                    key: "ZbZSe6N_BXs",
+                    jacket:
                         "https://i.ytimg.com/vi/ZbZSe6N_BXs/maxresdefault.jpg",
-                    max_thumbnail:
+                    bigJacket:
                         "https://i.ytimg.com/vi/ZbZSe6N_BXs/maxresdefault.jpg",
                     duration: "04:01"
                 }

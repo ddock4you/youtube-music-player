@@ -11,11 +11,11 @@ import Header from "./Header";
 import NowList from "../Routes/NowList";
 import PlayList from "../Routes/PlayList";
 import Search from "../Routes/Search";
-import { playlist } from "../reducer";
+import { musicList } from "../reducer";
 
 function App() {
     useEffect(() => {
-        localStorage.setItem("localPlayList", JSON.stringify(playlist));
+        localStorage.setItem("localPlayList", JSON.stringify(musicList));
     }, []);
 
     return (

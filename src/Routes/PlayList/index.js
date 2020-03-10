@@ -1,22 +1,22 @@
 import React from "react";
-import { fake } from "../../fake";
+// import { fake } from "../../fake";
 
-const PlayList = () => {
+const PlayList = ({ musicList }) => {
+    console.log(musicList);
     const {
-        snippet: {
-            thumbnails: {
-                maxres: { url }
-            }
-        }
-    } = fake.items[0];
+        base: { list }
+    } = musicList;
 
+    console.log(list);
     return (
         <div className="playlist">
             <div className="playlist--music">
                 <div className="playlist--music=thumnail">
-                    <img src={url} alt="" />
+                    <img src={list.jacket} alt="" />
                 </div>
-                <div className=""></div>
+                <div className="playlist--info">
+                    <div></div>
+                </div>
             </div>
         </div>
     );

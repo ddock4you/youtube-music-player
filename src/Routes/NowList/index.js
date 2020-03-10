@@ -7,6 +7,7 @@ import "./style.scss";
 import PlayList from "../PlayList";
 import InputMusic from "../../components/InputMusic";
 import MusicBar from "../../components/MusicBar";
+import { musicList } from "../../reducer";
 
 dotenv.config();
 
@@ -15,13 +16,13 @@ const NowList = () => {
 
     const getMovieInfo = async videoId => {
         try {
-            const APIKEY = "AIzaSyCV-tsD9TwSupW3pKjwGR33jKvsCpDPMu0";
+            const APIKEY = process.env.REACT_APP_APIKEY;
             const APIURL = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${APIKEY}&part=snippet,contentDetails,statistics,status`;
             const video = await axios.get(APIURL);
 
             if (video.status === 200 && video.data.items.length >= 1) {
                 const music = {
-                    song: "",
+                    title: "",
                     singer: "",
                     key: "",
                     jacket: "",
@@ -29,23 +30,31 @@ const NowList = () => {
                     duration: ""
                 };
 
-                const {
-                    snippet: { thumbnails }
-                } = video.data.items[0];
+                const { id } = video.data.items[0];
+                const { snippet } = video.data.items[0];
+                const { contentDetails } = video.data.items[0];
+                const { thumbnails } = snippet;
 
-                music.bigJacket = thumbnails.maxres
-                    ? thumbnails.maxres
-                    : thumbnails.standard
-                    ? thumbnails.standard
-                    : thumbnails.high
-                    ? thumbnails.high
-                    : thumbnails.medium
-                    ? thumbnails.medium
-                    : thumbnails.default;
-                console.log(music.bigJacket);
+                music.title = snippet.title;
+                music.singer = snippet.channelTitle;
+                music.key = id;
+                music.duration = contentDetails.duration;
+                music.jacket = thumbnails.default;
+                music.bigJacket = thumbnails.maxres.url
+                    ? thumbnails.maxres.url
+                    : thumbnails.standard.url
+                    ? thumbnails.standard.url
+                    : thumbnails.high.url
+                    ? thumbnails.high.url
+                    : thumbnails.medium.url
+                    ? thumbnails.medium.url
+                    : thumbnails.default.url;
+                // console.log(music);
+                musicList[0] = musicList[0].base.list.concat(music);
+
+                return console.log(musicList[0]);
             }
-
-            return console.log(video);
+            // return console.log(video);
         } catch (e) {
             console.error(e);
         }
@@ -54,7 +63,7 @@ const NowList = () => {
 
     const { kind } = fake.items[0];
     console.log(kind);
-
+    console.log(musicList[0]);
     return (
         <div className={`now-list ${javasc}`}>
             <div className="cover">
@@ -70,7 +79,7 @@ const NowList = () => {
                 // url={url}
                 // onChangeUrl={onChangeUrl}
                 />
-                <PlayList />
+                <PlayList musicList={musicList[0]} />
             </div>
             <MusicBar />
         </div>
