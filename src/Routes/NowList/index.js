@@ -1,13 +1,12 @@
 import React from "react";
-import axios from "axios";
 import dotenv from "dotenv";
+import axios from "axios";
 
-import { fake } from "../../fake";
-import "./style.scss";
-import PlayList from "../PlayList";
+import MusicList from "../../components/MusicList";
 import InputMusic from "../../components/InputMusic";
 import MusicBar from "../../components/MusicBar";
 import { musicList } from "../../reducer";
+import "./style.scss";
 
 dotenv.config();
 
@@ -52,7 +51,7 @@ const NowList = () => {
                 // console.log(music);
                 musicList[0] = musicList[0].base.list.concat(music);
 
-                return console.log(musicList[0]);
+                // return console.log(musicList[0]);
             }
             // return console.log(video);
         } catch (e) {
@@ -61,9 +60,6 @@ const NowList = () => {
     };
     getMovieInfo("yd3KYOei8o4");
 
-    const { kind } = fake.items[0];
-    console.log(kind);
-    console.log(musicList[0]);
     return (
         <div className={`now-list ${javasc}`}>
             <div className="cover">
@@ -79,7 +75,7 @@ const NowList = () => {
                 // url={url}
                 // onChangeUrl={onChangeUrl}
                 />
-                <PlayList musicList={musicList[0]} />
+                <MusicList musicList={musicList[0]} />
             </div>
             <MusicBar />
         </div>
