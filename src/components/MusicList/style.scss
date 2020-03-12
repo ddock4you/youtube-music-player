@@ -1,0 +1,65 @@
+.music-list {
+    box-sizing: border-box;
+    height: 100%;
+    padding-top: 10px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-width: 1px 0;
+    color: #fff;
+    &--title {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+        font-size: 18px;
+    }
+    .music {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        border-bottom: 1px solid #666;
+        cursor: pointer;
+        &:last-child {
+            border-bottom: none;
+        }
+        &--jacket {
+            flex: none;
+            width: 48px;
+            height: 48px;
+            background: lightpink;
+            p {
+                position: relative;
+                height: 100%;
+                overflow: hidden;
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    max-height: 100%;
+                }
+            }
+        }
+        &--info {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 0 15px;
+            overflow: hidden;
+            & > div {
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            &__title {
+                padding-bottom: 5px;
+                font-weight: 700;
+            }
+            &__singer {
+                color: #aaa;
+            }
+        }
+        &--duration {
+            display: inline-flex;
+            // flex: none;
+        }
+    }
+}
