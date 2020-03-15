@@ -12,6 +12,7 @@ import NowList from "../Routes/NowList";
 import PlayList from "../Routes/PlayList";
 import Search from "../Routes/Search";
 import { musicList } from "../reducer";
+import NowPlaying from "./NowPlaying";
 
 function App() {
     useEffect(() => {
@@ -21,6 +22,7 @@ function App() {
     return (
         <Router>
             <Header />
+            <NowPlaying />
             <Switch>
                 <Route exact path="/" component={NowList} />
                 <Route exact path="/playlist" component={PlayList} />

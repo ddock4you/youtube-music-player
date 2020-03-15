@@ -3,11 +3,11 @@
     height: 100%;
     padding-top: 10px;
     overflow-y: auto;
-    border: 1px solid #ccc;
-    border-width: 1px 0;
+    border-top: 1px solid #ccc;
     color: #fff;
     &--title {
         padding-bottom: 10px;
+        padding-left: 10px;
         border-bottom: 1px solid #ccc;
         font-size: 18px;
     }

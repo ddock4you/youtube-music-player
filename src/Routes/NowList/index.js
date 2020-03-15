@@ -64,9 +64,10 @@ const NowList = () => {
         <div className={`now-list ${javasc}`}>
             <div className="cover">
                 <div className="cover-img">
-                    <p>
-                        <img src="" alt="" />
-                    </p>
+                    <img
+                        src="https://i.ytimg.com/vi/yd3KYOei8o4/maxresdefault.jpg"
+                        alt="cover"
+                    />
                 </div>
             </div>
             <div className="music-content">
