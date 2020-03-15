@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 // import { fake } from "../../fake";
+import "./style.scss";
 
 const InputMusic = () => {
     const [url, setUrl] = useState("");
