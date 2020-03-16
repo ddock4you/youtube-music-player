@@ -7,6 +7,7 @@ import InputMusic from "../../components/InputMusic";
 import MusicBar from "../../components/MusicBar";
 import { musicList } from "../../reducer";
 import "./style.scss";
+import NowPlaying from "../../components/NowPlaying";
 
 dotenv.config();
 
@@ -79,6 +80,7 @@ const NowList = () => {
                 <MusicList musicList={musicList[0]} />
             </div>
             <MusicBar />
+            <NowPlaying />
         </div>
     );
 };
