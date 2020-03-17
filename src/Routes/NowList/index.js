@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import dotenv from "dotenv";
 import axios from "axios";
 
@@ -13,14 +13,25 @@ dotenv.config();
 
 const NowList = () => {
     const javasc = "javascript";
-    console.log(musicList[0].base.list);
+    // console.log(musicList[0].base.list);
     // let {
     //     base: { list }
     // } = musics;
 
+    const storageInMusic = localStorage.getItem("localPlayList")
+        ? JSON.parse(localStorage.getItem("localPlayList"))
+        : musicList[0].base.list;
+    const [statePlayList, setStatePlayList] = useState(storageInMusic);
+
+    useEffect(() => {
+        localStorage.setItem("localPlayList", JSON.stringify(statePlayList));
+    });
+
     const addMusic = music => {
-        let musics = musicList[0].base.list.concat(music);
-        console.log(musics);
+        let musicsStep1 = musicList[0].base.list;
+        let musicsStep2 = musicsStep1.concat(...music);
+        musicsStep1 = musicsStep2;
+        console.log(musicsStep1);
     };
 
     const getMovieInfo = async videoId => {
