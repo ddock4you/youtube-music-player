@@ -13,6 +13,15 @@ dotenv.config();
 
 const NowList = () => {
     const javasc = "javascript";
+    console.log(musicList[0].base.list);
+    // let {
+    //     base: { list }
+    // } = musics;
+
+    const addMusic = music => {
+        let musics = musicList[0].base.list.concat(music);
+        console.log(musics);
+    };
 
     const getMovieInfo = async videoId => {
         try {
@@ -50,16 +59,16 @@ const NowList = () => {
                     ? thumbnails.medium.url
                     : thumbnails.default.url;
                 // console.log(music);
-                musicList[0] = musicList[0].base.list.concat(music);
-
-                // return console.log(musicList[0]);
+                // addMusic(music);
+                return addMusic(music);
             }
             // return console.log(video);
         } catch (e) {
             console.error(e);
         }
     };
-    getMovieInfo("yd3KYOei8o4");
+
+    // getMovieInfo("yd3KYOei8o4");
 
     return (
         <div className={`now-list ${javasc}`}>
@@ -73,9 +82,9 @@ const NowList = () => {
             </div>
             <div className="music-content">
                 <InputMusic
-                // inputUrl={inputUrl}
-                // url={url}
-                // onChangeUrl={onChangeUrl}
+                    getMovieinfo={getMovieInfo}
+                    // url={url}
+                    // onChangeUrl={onChangeUrl}
                 />
                 <MusicList musicList={musicList[0]} />
             </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import { fake } from "../../fake";
 import "./style.scss";
 
-const InputMusic = () => {
+const InputMusic = ({ getMovieinfo }) => {
     const [url, setUrl] = useState("");
 
     const onChangeUrl = e => {
@@ -22,15 +22,16 @@ const InputMusic = () => {
         // youtube 메뉴 중 '동영상 URL 복사'를 통해 URL를 얻어서 입력했을 경우
         if (url.includes("youtu.be") === true) {
             videoID = url.split("/")[3].split("?")[0];
-            console.log(videoID);
+            getMovieinfo(videoID);
             // 일반 URL을 복사해서 입력했을 경우
         } else if (url.includes("v=") === false) {
             videoID = url;
+            getMovieinfo(videoID);
         } else if (url.includes("v=") === true) {
             videoID = url.split("v=")[1];
+            getMovieinfo(videoID);
         }
         setUrl("");
-        console.log(videoID);
     };
 
     return (

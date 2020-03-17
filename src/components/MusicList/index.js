@@ -10,7 +10,7 @@ const Music = ({ musicList }) => {
     } = musicList;
     const playMusic = true;
 
-    console.log(list);
+    // console.log(list);
     return (
         <div className="music-list">
             <p className="music-list--title">기본목록</p>

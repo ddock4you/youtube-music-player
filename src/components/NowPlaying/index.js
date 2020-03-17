@@ -6,19 +6,14 @@ import {
     faPlay,
     faPause
 } from "@fortawesome/free-solid-svg-icons";
-// import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-// import { fake } from "../../../fake";
-
 const NowPlaying = () => {
-    // console.log(kind);
-
     const playstat = false;
 
     return (
         <div className="nowplaying">
-            <div class="nowplaying--left-control">
+            <div className="nowplaying--left-control">
                 <button type="button">
                     <FontAwesomeIcon icon={faBackward} />
                 </button>
@@ -31,7 +26,7 @@ const NowPlaying = () => {
                 <p className="nowplaying-content--duration">00:00 / 20:00</p>
             </div>
             <div className="nowplaying-content">
-                <p class="nowplaying-content--thumbnail">
+                <p className="nowplaying-content--thumbnail">
                     <img
                         src="https://i.ytimg.com/vi/yd3KYOei8o4/maxresdefault.jpg"
                         alt="finalfantasy"
