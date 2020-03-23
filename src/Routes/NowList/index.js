@@ -13,26 +13,21 @@ dotenv.config();
 
 const NowList = () => {
     const javasc = "javascript";
-    // console.log(musicList[0].base.list);
-    // let {
-    //     base: { list }
-    // } = musics;
 
-    console.log(musicList[0].base.list);
+    const defaultMusicList = musicList[0].base.list;
     const storageInMusic = localStorage.getItem("localPlayList")
         ? JSON.parse(localStorage.getItem("localPlayList"))
-        : musicList[0].base.list;
+        : defaultMusicList;
     const [statePlayList, setStatePlayList] = useState(storageInMusic);
 
     useEffect(() => {
         localStorage.setItem("localPlayList", JSON.stringify(statePlayList));
-    });
+    }, [statePlayList]);
 
     const addMusic = music => {
-        let musicsStep1 = statePlayList;
-        let musicsStep2 = musicsStep1.concat(music);
-        setStatePlayList(musicsStep2);
-        console.log(musicsStep2);
+        let addMusicList = statePlayList.concat(music);
+        setStatePlayList(addMusicList);
+        console.log(statePlayList);
     };
 
     const getMovieInfo = async videoId => {

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import {
     BrowserRouter as Router,
     Switch,
@@ -11,13 +11,8 @@ import Header from "./Header";
 import NowList from "../Routes/NowList";
 import PlayList from "../Routes/PlayList";
 import Search from "../Routes/Search";
-import { musicList } from "../reducer";
 
 function App() {
-    useEffect(() => {
-        localStorage.setItem("localPlayList", JSON.stringify(musicList));
-    }, []);
-
     return (
         <Router>
             <Header />
