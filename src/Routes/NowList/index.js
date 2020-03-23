@@ -18,6 +18,7 @@ const NowList = () => {
     //     base: { list }
     // } = musics;
 
+    console.log(musicList[0].base.list);
     const storageInMusic = localStorage.getItem("localPlayList")
         ? JSON.parse(localStorage.getItem("localPlayList"))
         : musicList[0].base.list;
@@ -28,10 +29,10 @@ const NowList = () => {
     });
 
     const addMusic = music => {
-        let musicsStep1 = musicList[0].base.list;
-        let musicsStep2 = musicsStep1.concat(...music);
-        musicsStep1 = musicsStep2;
-        console.log(musicsStep1);
+        let musicsStep1 = statePlayList;
+        let musicsStep2 = musicsStep1.concat(music);
+        setStatePlayList(musicsStep2);
+        console.log(musicsStep2);
     };
 
     const getMovieInfo = async videoId => {

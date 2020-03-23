@@ -11,8 +11,7 @@ const InputMusic = ({ getMovieinfo }) => {
 
     const inputUrl = e => {
         e.preventDefault();
-        console.log(url);
-
+        // console.log(url);
         if (url.trim === "" && !url) {
             alert("YouTube URL이나 Video ID를 입력해주세요.");
             return;
