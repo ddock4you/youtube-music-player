@@ -93,7 +93,7 @@ const NowList = () => {
                     // url={url}
                     // onChangeUrl={onChangeUrl}
                 />
-                <MusicList musicList={musicList[0]} />
+                <MusicList musicList={statePlayList} />
             </div>
             <MusicBar />
             <NowPlaying />
