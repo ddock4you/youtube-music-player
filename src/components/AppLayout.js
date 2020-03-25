@@ -6,7 +6,7 @@ import {
     Redirect
 } from "react-router-dom";
 
-import "../reset.scss";
+import "../scss/reset.scss";
 import Header from "./Header";
 import NowList from "../Routes/NowList";
 import PlayList from "../Routes/PlayList";

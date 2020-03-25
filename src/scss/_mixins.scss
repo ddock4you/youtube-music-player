@@ -1,0 +1,66 @@
+@import "_variables";
+
+// 그림을 정가운데로(부모가 position 속성을 가지고 있을 경우)
+@mixin center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+}
+
+@mixin skiptext {
+    overflow: hidden;
+    text-overflow: ellopsis;
+    white-space: nowrap;
+}
+
+// 반응형
+@mixin pc-large {
+    @media screen and (min-width: #{$desktop-l + 1}) {
+        @content;
+    }
+}
+
+@mixin pc-only {
+    @media screen and (min-width: #{$tablet-l + 1}) {
+        @content;
+    }
+}
+
+@mixin tablet-m {
+    @media screen and (max-width: #{$tablet-l}) {
+        @content;
+    }
+}
+
+@mixin tablet-s {
+    @media screen and (max-width: #{$tablet-s}) {
+        @content;
+    }
+}
+
+@mixin mobile-l {
+    @media screen and (max-width: #{mobile-l}) {
+        @content;
+    }
+}
+
+@mixin mobile-m {
+    @media screen and (max-width: #{mobile-m}) {
+        @content;
+    }
+}
+
+@mixin mobile-s {
+    @media screen and (max-width: #{mobile-s}) {
+        @content;
+    }
+}
