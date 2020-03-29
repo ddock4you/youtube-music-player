@@ -7,8 +7,12 @@
     padding: 110px 50px 75px;
     background-color: #000;
     @include tablet-m {
-        height: 100%;
         flex-direction: column;
+        height: 100%;
+        padding: 110px 25px 75px;
+    }
+    @include mobile-l {
+        padding: 110px 0 75px;
     }
     .cover {
         flex: 4;
@@ -17,7 +21,11 @@
         padding-right: 50px;
         .cover-img {
             position: relative;
-            padding-bottom: 100%;
+            height: 100%;
+            @include tablet-m {
+                height: auto;
+                padding-bottom: 100%;
+            }
             img {
                 position: absolute;
                 top: 50%;
@@ -29,7 +37,6 @@
         @include tablet-m {
             width: 100%;
             box-sizing: border-box;
-            padding: 0 5%;
             flex: none;
             padding-right: 0;
         }

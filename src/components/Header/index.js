@@ -19,9 +19,9 @@ const Header = () => {
                     <li>
                         <Link to="/">플레이 리스트</Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link to="/playlist">재생목록</Link>
-                    </li>
+                    </li> */}
                     <li>
                         <Link to="/search">검색</Link>
                     </li>

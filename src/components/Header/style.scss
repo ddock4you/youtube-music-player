@@ -1,3 +1,5 @@
+@import "../../scss/mixins";
+
 header {
     box-sizing: border-box;
     display: flex;
@@ -18,12 +20,19 @@ header {
             display: inline-block;
             margin-right: 40px;
             padding: 10px;
+            @include mobile-l {
+                margin-right: 15px;
+                padding: 5px;
+            }
             a {
                 font-family: "Spoqa Han Sans";
                 font-size: 20px;
                 font-weight: 500;
                 color: #888;
                 text-decoration: none;
+                @include mobile-m {
+                    font-size: 16px;
+                }
                 &:hover {
                     color: #fff;
                 }

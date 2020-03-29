@@ -1,15 +1,21 @@
+@import "../../scss/mixins";
+
 .music-list {
     box-sizing: border-box;
     height: 100%;
-    padding-top: 10px;
+    padding-top: 15px;
     overflow-y: auto;
     border-top: 1px solid #ccc;
     color: #fff;
     &--title {
-        padding-bottom: 10px;
+        padding-bottom: 15px;
         padding-left: 10px;
         border-bottom: 1px solid #ccc;
         font-size: 18px;
+        color: #ccc;
+        @include mobile-m {
+            font-size: 14px;
+        }
     }
     .music {
         display: flex;
@@ -17,6 +23,9 @@
         padding: 10px;
         border-bottom: 1px solid #666;
         cursor: pointer;
+        @include mobile-m {
+            font-size: 14px;
+        }
         &:last-child {
             border-bottom: none;
         }
@@ -25,6 +34,10 @@
             width: 48px;
             height: 48px;
             background: lightpink;
+            @include mobile-m {
+                width: 36px;
+                height: 36px;
+            }
             p {
                 position: relative;
                 height: 100%;
@@ -44,6 +57,7 @@
             flex-direction: column;
             padding: 0 15px;
             overflow: hidden;
+
             & > div {
                 overflow: hidden;
                 white-space: nowrap;

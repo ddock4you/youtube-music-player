@@ -1,3 +1,5 @@
+@import "../../scss/mixins";
+
 .nowplaying {
     display: flex;
     box-sizing: border-box;
@@ -15,6 +17,7 @@
         display: flex;
         flex: none;
         align-items: center;
+        padding-right: 20px;
         button {
             width: 40px;
             height: 40px;
@@ -22,12 +25,19 @@
             cursor: pointer;
         }
     }
+    &-content--duration {
+        @include mobile-l {
+            display: none;
+        }
+    }
     &-content {
         display: flex;
         flex: 1;
         align-items: center;
+        overflow: hidden;
         justify-content: center;
         &--thumbnail {
+            flex: none;
             width: 48px;
             height: 48px;
             position: relative;
@@ -41,18 +51,23 @@
             }
         }
         &--info {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
             padding: 0 15px;
             &__title {
                 padding-bottom: 5px;
                 font-weight: 700;
+                @include skiptext;
             }
             &__artist {
+                @include skiptext;
                 color: #aaa;
             }
         }
     }
     &--rtight-control {
-        display: flex;
+        display: inline-flex;
         flex: none;
     }
 }

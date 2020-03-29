@@ -18,7 +18,7 @@
 
 @mixin skiptext {
     overflow: hidden;
-    text-overflow: ellopsis;
+    text-overflow: ellipsis;
     white-space: nowrap;
 }
 
@@ -48,19 +48,19 @@
 }
 
 @mixin mobile-l {
-    @media screen and (max-width: #{mobile-l}) {
+    @media screen and (max-width: #{$mobile-l}) {
         @content;
     }
 }
 
 @mixin mobile-m {
-    @media screen and (max-width: #{mobile-m}) {
+    @media screen and (max-width: #{$mobile-m}) {
         @content;
     }
 }
 
 @mixin mobile-s {
-    @media screen and (max-width: #{mobile-s}) {
+    @media screen and (max-width: #{$mobile-s}) {
         @content;
     }
 }
