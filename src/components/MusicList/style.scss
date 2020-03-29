@@ -4,7 +4,6 @@
     box-sizing: border-box;
     height: 100%;
     padding-top: 15px;
-    overflow-y: auto;
     border-top: 1px solid #ccc;
     color: #fff;
     &--title {
@@ -16,6 +15,10 @@
         @include mobile-m {
             font-size: 14px;
         }
+    }
+    &--area {
+        height: calc(100% - 49px);
+        overflow-y: auto;
     }
     .music {
         display: flex;
@@ -73,7 +76,11 @@
         }
         &--duration {
             display: inline-flex;
-            // flex: none;
+        }
+        &--remove {
+            display: inline-flex;
+            margin-left: 20px;
+            font-size: 26px;
         }
     }
 }
