@@ -55,7 +55,7 @@ const NowList = () => {
                 music.title = snippet.title;
                 music.singer = snippet.channelTitle;
                 music.key = id;
-                music.id = statePlayList.length;
+                music.id = new Date().valueOf();
                 music.duration = contentDetails.duration;
                 music.jacket = thumbnails.default;
                 music.bigJacket = thumbnails.maxres.url
@@ -77,6 +77,17 @@ const NowList = () => {
         }
     };
 
+    const deleteMusicList = selectedMusic => {
+        if (statePlayList.length === 1) {
+            alert("플레이리스트에 최소 하나 이상의 음악이 있어야 합니다.");
+            return;
+        }
+        const deleteMusic = statePlayList.filter(
+            music => music.key !== selectedMusic
+        );
+        setStatePlayList(deleteMusic);
+    };
+
     return (
         <div className={`now-list ${javasc}`}>
             <div className="cover">
@@ -94,7 +105,10 @@ const NowList = () => {
                     // url={url}
                     // onChangeUrl={onChangeUrl}
                 />
-                <MusicList musicList={statePlayList} />
+                <MusicList
+                    musicList={statePlayList}
+                    deleteMusicList={deleteMusicList}
+                />
             </div>
             <MusicBar />
             <NowPlaying />

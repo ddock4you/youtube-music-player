@@ -25,7 +25,7 @@
         align-items: center;
         padding: 10px;
         border-bottom: 1px solid #666;
-        cursor: pointer;
+        // cursor: pointer;
         @include mobile-m {
             font-size: 14px;
         }
@@ -81,6 +81,7 @@
             display: inline-flex;
             margin-left: 20px;
             font-size: 26px;
+            cursor: pointer;
         }
     }
 }

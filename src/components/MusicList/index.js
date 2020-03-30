@@ -5,7 +5,7 @@ import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 // import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Music = ({ musicList }) => {
+const Music = ({ musicList, deleteMusicList }) => {
     const playMusic = true;
 
     // console.log(list);
@@ -35,7 +35,13 @@ const Music = ({ musicList }) => {
                         </div>
                         <div className="music--duration">{music.duration}</div>
                         <div className="music--remove">
-                            <FontAwesomeIcon icon={faTimesCircle} />
+                            <FontAwesomeIcon
+                                icon={faTimesCircle}
+                                onClick={e => {
+                                    e.stopPropagation();
+                                    deleteMusicList(music.key);
+                                }}
+                            />
                         </div>
                     </div>
                 ))}
