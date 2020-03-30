@@ -14,7 +14,7 @@ const Music = ({ musicList, deleteMusicList }) => {
             <p className="music-list--title">기본목록</p>
             <div className="music-list--area">
                 {musicList.map(music => (
-                    <div className="music playing" key={music.id}>
+                    <div className="music" key={music.id}>
                         <div className="music--jacket">
                             <p>
                                 <img src={music.jacket} alt={music.title} />

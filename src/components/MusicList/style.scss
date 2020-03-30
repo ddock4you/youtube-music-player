@@ -25,12 +25,15 @@
         align-items: center;
         padding: 10px;
         border-bottom: 1px solid #666;
-        // cursor: pointer;
+        cursor: pointer;
         @include mobile-m {
             font-size: 14px;
         }
         &:last-child {
             border-bottom: none;
+        }
+        &:hover {
+            background: #222;
         }
         &--jacket {
             flex: none;

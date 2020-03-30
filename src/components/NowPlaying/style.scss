@@ -70,4 +70,14 @@
         display: inline-flex;
         flex: none;
     }
+    .hidden {
+        // display: none;
+        position: absolute;
+        top: -500px;
+        left: 0;
+        // top: -99999px;
+        // left: -99999px;
+        width: 1px;
+        height: 1px;
+    }
 }

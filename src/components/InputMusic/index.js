@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { faPlus, faFilter } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./style.scss";

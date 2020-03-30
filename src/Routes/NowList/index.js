@@ -19,6 +19,7 @@ const NowList = () => {
         ? JSON.parse(localStorage.getItem("localPlayList"))
         : defaultMusicList;
     const [statePlayList, setStatePlayList] = useState(storageInMusic);
+    const [nowPlayingMusic, setNowPlayingMusic] = useState(statePlayList[0]);
 
     useEffect(() => {
         localStorage.setItem("localPlayList", JSON.stringify(statePlayList));
@@ -111,7 +112,11 @@ const NowList = () => {
                 />
             </div>
             <MusicBar />
-            <NowPlaying />
+            <NowPlaying
+                nowPlayingMusic={nowPlayingMusic}
+                setNowPlayingMusic={setNowPlayingMusic}
+                musicList={statePlayList}
+            />
         </div>
     );
 };
