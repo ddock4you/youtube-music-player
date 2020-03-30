@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-// import { fake } from "../../fake";
+import { faPlus, faFilter } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import "./style.scss";
 
-const InputMusic = ({ getMovieinfo }) => {
+const InputMusic = ({ getMovieinfo, musicList }) => {
     const [url, setUrl] = useState("");
 
     const onChangeUrl = e => {
@@ -27,6 +29,12 @@ const InputMusic = ({ getMovieinfo }) => {
         } else if (url.includes("v=") === true) {
             videoID = url.split("v=")[1];
         }
+
+        if (musicList.find(music => music.key === videoID)) {
+            alert("이미 등록된 음악입니다.");
+            return;
+        }
+
         getMovieinfo(videoID);
         setUrl("");
     };
@@ -34,10 +42,12 @@ const InputMusic = ({ getMovieinfo }) => {
     return (
         <form className="music-input" onSubmit={inputUrl}>
             <label>
-                <span>유튜브 url 입력</span>
+                <span>YouTube URL :</span>
                 <input type="text" value={url} onChange={onChangeUrl} />
             </label>
-            <button type="submit">+</button>
+            <button type="submit">
+                <FontAwesomeIcon icon={faPlus} />
+            </button>
         </form>
     );
 };

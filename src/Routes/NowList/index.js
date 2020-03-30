@@ -38,6 +38,7 @@ const NowList = () => {
 
             if (video.status === 200 && video.data.items.length >= 1) {
                 const music = {
+                    id: "",
                     title: "",
                     singer: "",
                     key: "",
@@ -54,6 +55,7 @@ const NowList = () => {
                 music.title = snippet.title;
                 music.singer = snippet.channelTitle;
                 music.key = id;
+                music.id = statePlayList.length;
                 music.duration = contentDetails.duration;
                 music.jacket = thumbnails.default;
                 music.bigJacket = thumbnails.maxres.url
@@ -65,7 +67,7 @@ const NowList = () => {
                     : thumbnails.medium.url
                     ? thumbnails.medium.url
                     : thumbnails.default.url;
-                // console.log(music);
+                console.log(music.id);
                 // addMusic(music);
                 return addMusic(music);
             }
@@ -74,8 +76,6 @@ const NowList = () => {
             console.error(e);
         }
     };
-
-    // getMovieInfo("yd3KYOei8o4");
 
     return (
         <div className={`now-list ${javasc}`}>
@@ -90,6 +90,7 @@ const NowList = () => {
             <div className="music-content">
                 <InputMusic
                     getMovieinfo={getMovieInfo}
+                    musicList={statePlayList}
                     // url={url}
                     // onChangeUrl={onChangeUrl}
                 />
