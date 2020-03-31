@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import YouTube from "react-player";
 import {
     faStepForward,
@@ -19,15 +19,16 @@ const NowPlaying = ({ nowPlayingMusic, setNowPlayingMusic, musicList }) => {
     const [seek, setSeek] = useState(0);
     const [played, setPlayed] = useState(0);
     const [playing, setPlaying] = useState(false);
+    const [seeking, setSeeking] = useState(true);
 
     const handleDuration = duration => {
         console.log("onDuration", duration);
         setDuration(duration);
     };
 
-    const handleSeekChange = e => {
-        setPlayed({ played: parseFloat(e.target.value) });
-    };
+    // const handleSeekChange = e => {
+    //     setPlayed({ played: parseFloat(e.target.value) });
+    // };
 
     const handlePlayMusic = () => {
         setIsPlaying(!isPlaying);
@@ -35,9 +36,39 @@ const NowPlaying = ({ nowPlayingMusic, setNowPlayingMusic, musicList }) => {
 
     const handlePlay = () => {};
 
+    const handleProgress = state => {
+        console.log("onProgress", state.played);
+
+        setPlayed(state.played);
+    };
+
     const playingMusicIndex = musicList.findIndex(
         item => item.key === nowPlayingMusic.key
     );
+
+    const handleNextPlay = index => {
+        if (index + 1 === musicList.length) {
+            setIsPlaying(false);
+            alert("끝 부분입니다.");
+            return;
+        }
+        setNowPlayingMusic(musicList[index + 1]);
+        setIsPlaying(true);
+    };
+
+    const handlePrevPlay = index => {
+        if (index - 1 === -1) {
+            setIsPlaying(false);
+            alert("처음 시작되는 부분입니다.");
+            return;
+        }
+        setNowPlayingMusic(musicList[index - 1]);
+        setIsPlaying(true);
+    };
+
+    const handleVolumeChange = e => {
+        setVolume(e.target.value);
+    };
 
     return (
         <div className="nowplaying">
@@ -49,19 +80,31 @@ const NowPlaying = ({ nowPlayingMusic, setNowPlayingMusic, musicList }) => {
                 onDuration={handleDuration}
                 playing={isPlaying}
                 onPlay={handlePlay}
+                onSeek={e => console.log("onSeek", e)}
+                onProgress={handleProgress}
             />
             <div className="nowplaying--left-control">
-                <button type="button">
+                <button
+                    type="button"
+                    onClick={() => {
+                        handlePrevPlay(playingMusicIndex);
+                    }}
+                >
                     <FontAwesomeIcon icon={faBackward} />
                 </button>
                 <button type="button" onClick={handlePlayMusic}>
                     <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
                 </button>
-                <button type="button">
+                <button
+                    type="button"
+                    onClick={() => {
+                        handleNextPlay(playingMusicIndex);
+                    }}
+                >
                     <FontAwesomeIcon icon={faStepForward} />
                 </button>
                 <p className="nowplaying-content--duration">
-                    <Duration seconds={played} /> /{" "}
+                    <Duration seconds={duration * played} /> /{" "}
                     <Duration seconds={duration} />
                 </p>
             </div>
@@ -82,8 +125,14 @@ const NowPlaying = ({ nowPlayingMusic, setNowPlayingMusic, musicList }) => {
                 </div>
             </div>
             <div className="nowplaying--right-control">
-                <button type="button">사운드</button>
-                <button type="button">플레이</button>
+                <input
+                    type="range"
+                    min={0}
+                    max={1}
+                    step="any"
+                    value={volume}
+                    onChange={handleVolumeChange}
+                />
             </div>
         </div>
     );
