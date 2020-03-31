@@ -79,7 +79,7 @@
         }
     }
     .hidden {
-        // display: none;
+        display: none;
         position: absolute;
         top: -500px;
         left: 0;
@@ -87,5 +87,35 @@
         // left: -99999px;
         width: 1px;
         height: 1px;
+    }
+    .duration--bar {
+        position: absolute;
+        top: -5px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        input {
+            width: 100%;
+        }
+        .input-range__label-container {
+            display: none;
+        }
+        .input-range__slider {
+            opacity: 0;
+            width: 0.8rem;
+            height: 0.8rem;
+            background: #ff0000;
+            border-color: #ff0000;
+            transition: all 0.3s;
+        }
+        .input-range__track {
+            background: #555;
+        }
+        .input-range__track--active {
+            background: #ff0000;
+        }
+        .input-range:hover .input-range__slider {
+            opacity: 1;
+        }
     }
 }

@@ -4,7 +4,6 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 // import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Duration from "../Duration";
 
 const Music = ({
     musicList,

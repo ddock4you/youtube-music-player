@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import YouTube from "react-player";
 import {
     faStepForward,
@@ -10,6 +10,8 @@ import {
     faVolumeDown
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import InputRange from "react-input-range";
+import "react-input-range/lib/css/index.css";
 
 import Duration from "../Duration";
 import "./style.scss";
@@ -34,6 +36,8 @@ const NowPlaying = ({
         console.log("onDuration", duration);
         setDuration(duration);
     };
+
+    const player = useRef();
 
     // const handleSeekChange = e => {
     //     setPlayed({ played: parseFloat(e.target.value) });
@@ -98,19 +102,48 @@ const NowPlaying = ({
         }
     };
 
+    const handleSeekChange = value => {
+        setPlayed(parseFloat(value));
+    };
+
+    const handleSeekMouseUp = value => {
+        // this.setState({ seeking: false })
+        player.current.seekTo(parseFloat(value));
+        setIsPlaying(true);
+    };
+
     return (
         <div className="nowplaying">
             <YouTube
                 className="hidden"
                 url={`https://www.youtube.com/watch?v=${nowPlayingMusic.key}`}
                 volume={mute ? 0 : volume}
-                // onSeek={e => console.log("onSeek", e)}
                 onDuration={handleDuration}
                 playing={isPlaying}
+                ref={player}
                 onPlay={handlePlay}
                 onSeek={e => console.log("onSeek", e)}
                 onProgress={handleProgress}
             />
+            <div className="duration--bar">
+                {/* <input
+                    type="range"
+                    min={0}
+                    max={0.99999}
+                    step="any"
+                    value={played}
+                    onChange={handleSeekChange}
+                    onMouseUp={handleSeekMouseUp}
+                /> */}
+                <InputRange
+                    step={0.000001}
+                    minValue={0}
+                    maxValue={0.999999}
+                    value={played}
+                    onChange={handleSeekChange}
+                    onChangeComplete={handleSeekMouseUp}
+                />
+            </div>
             <div className="nowplaying--left-control">
                 <button
                     type="button"
