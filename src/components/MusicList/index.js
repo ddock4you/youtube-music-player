@@ -20,13 +20,21 @@ const Music = ({
         setCover(musicList.find(item => item.key === key).bigJacket);
         setIsPlaying(true);
     };
+
+    const playingMusicIndex = musicList.findIndex(
+        item => item.key === nowPlayingMusic.key
+    );
+
     return (
         <div className="music-list">
             <p className="music-list--title">기본목록</p>
             <div className="music-list--area">
-                {musicList.map(music => (
+                {musicList.map((music, index) => (
                     <div
-                        className={"music "}
+                        className={
+                            "music " +
+                            (index === playingMusicIndex ? "playing" : "")
+                        }
                         key={music.id}
                         onClick={() => {
                             clickPlayMusic(music.key);
