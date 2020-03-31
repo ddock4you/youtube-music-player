@@ -4,23 +4,32 @@ import {
     faStepForward,
     faBackward,
     faPlay,
-    faPause
+    faPause,
+    faVolumeMute,
+    faVolumeUp,
+    faVolumeDown
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Duration from "../Duration";
 import "./style.scss";
 
-const NowPlaying = ({ nowPlayingMusic, setNowPlayingMusic, musicList }) => {
+const NowPlaying = ({
+    nowPlayingMusic,
+    setNowPlayingMusic,
+    musicList,
+    setCover,
+    isPlaying,
+    setIsPlaying
+}) => {
     const [mute, setMute] = useState(false);
     const [volume, setVolume] = useState(0.5);
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [beforeVolume, setBeforeVolume] = useState(null);
     const [duration, setDuration] = useState(0);
     const [seek, setSeek] = useState(0);
     const [played, setPlayed] = useState(0);
     const [playing, setPlaying] = useState(false);
     const [seeking, setSeeking] = useState(true);
-
     const handleDuration = duration => {
         console.log("onDuration", duration);
         setDuration(duration);
@@ -52,6 +61,7 @@ const NowPlaying = ({ nowPlayingMusic, setNowPlayingMusic, musicList }) => {
             alert("끝 부분입니다.");
             return;
         }
+        setCover(musicList[index + 1].bigJacket);
         setNowPlayingMusic(musicList[index + 1]);
         setIsPlaying(true);
     };
@@ -62,12 +72,30 @@ const NowPlaying = ({ nowPlayingMusic, setNowPlayingMusic, musicList }) => {
             alert("처음 시작되는 부분입니다.");
             return;
         }
+        setCover(musicList[index - 1].bigJacket);
         setNowPlayingMusic(musicList[index - 1]);
         setIsPlaying(true);
     };
 
     const handleVolumeChange = e => {
         setVolume(e.target.value);
+        if (e.target.value === "0") {
+            setMute(true);
+        } else {
+            setMute(false);
+        }
+    };
+
+    const handleMute = () => {
+        if (mute === false) {
+            setMute(!mute);
+            setBeforeVolume(volume);
+            console.log(beforeVolume);
+            setVolume(0);
+        } else {
+            setMute(!mute);
+            setVolume(beforeVolume);
+        }
     };
 
     return (
@@ -125,11 +153,22 @@ const NowPlaying = ({ nowPlayingMusic, setNowPlayingMusic, musicList }) => {
                 </div>
             </div>
             <div className="nowplaying--right-control">
+                <button type="button" className="volume" onClick={handleMute}>
+                    <FontAwesomeIcon
+                        icon={
+                            mute
+                                ? faVolumeMute
+                                : volume >= 0.5
+                                ? faVolumeUp
+                                : faVolumeDown
+                        }
+                    />
+                </button>
                 <input
                     type="range"
                     min={0}
                     max={1}
-                    step="any"
+                    step="0.1"
                     value={volume}
                     onChange={handleVolumeChange}
                 />

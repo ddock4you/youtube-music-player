@@ -4,20 +4,38 @@ import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 // import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Duration from "../Duration";
 
-const Music = ({ musicList, deleteMusicList }) => {
+const Music = ({
+    musicList,
+    deleteMusicList,
+    nowPlayingMusic,
+    setNowPlayingMusic,
+    setCover,
+    isPlaying,
+    setIsPlaying
+}) => {
     const playMusic = true;
-
-    // console.log(list);
+    const clickPlayMusic = key => {
+        setNowPlayingMusic(musicList.find(item => item.key === key));
+        setCover(musicList.find(item => item.key === key).bigJacket);
+        setIsPlaying(true);
+    };
     return (
         <div className="music-list">
             <p className="music-list--title">기본목록</p>
             <div className="music-list--area">
                 {musicList.map(music => (
-                    <div className="music" key={music.id}>
+                    <div
+                        className={"music "}
+                        key={music.id}
+                        onClick={() => {
+                            clickPlayMusic(music.key);
+                        }}
+                    >
                         <div className="music--jacket">
                             <p>
-                                <img src={music.jacket} alt={music.title} />
+                                <img src={music.bigJacket} alt={music.title} />
                                 {playMusic ? (
                                     <FontAwesomeIcon icon={faPlay} />
                                 ) : (

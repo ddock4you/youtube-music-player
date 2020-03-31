@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import dotenv from "dotenv";
 import axios from "axios";
+import youtubeDuration from "youtube-duration-format";
 
 import MusicList from "../../components/MusicList";
 import InputMusic from "../../components/InputMusic";
@@ -20,6 +21,8 @@ const NowList = () => {
         : defaultMusicList;
     const [statePlayList, setStatePlayList] = useState(storageInMusic);
     const [nowPlayingMusic, setNowPlayingMusic] = useState(statePlayList[0]);
+    const [cover, setCover] = useState(statePlayList[0].bigJacket);
+    const [isPlaying, setIsPlaying] = useState(false);
 
     useEffect(() => {
         localStorage.setItem("localPlayList", JSON.stringify(statePlayList));
@@ -57,7 +60,7 @@ const NowList = () => {
                 music.singer = snippet.channelTitle;
                 music.key = id;
                 music.id = new Date().valueOf();
-                music.duration = contentDetails.duration;
+                music.duration = youtubeDuration(contentDetails.duration);
                 music.jacket = thumbnails.default;
                 music.bigJacket = thumbnails.maxres.url
                     ? thumbnails.maxres.url
@@ -93,10 +96,7 @@ const NowList = () => {
         <div className={`now-list ${javasc}`}>
             <div className="cover">
                 <div className="cover-img">
-                    <img
-                        src="https://i.ytimg.com/vi/yd3KYOei8o4/maxresdefault.jpg"
-                        alt="cover"
-                    />
+                    <img src={cover} alt={`${cover} cover`} />
                 </div>
             </div>
             <div className="music-content">
@@ -109,6 +109,11 @@ const NowList = () => {
                 <MusicList
                     musicList={statePlayList}
                     deleteMusicList={deleteMusicList}
+                    nowPlayingMusic={nowPlayingMusic}
+                    setNowPlayingMusic={setNowPlayingMusic}
+                    setCover={setCover}
+                    isPlaying={isPlaying}
+                    setIsPlaying={setIsPlaying}
                 />
             </div>
             <MusicBar />
@@ -116,6 +121,9 @@ const NowList = () => {
                 nowPlayingMusic={nowPlayingMusic}
                 setNowPlayingMusic={setNowPlayingMusic}
                 musicList={statePlayList}
+                setCover={setCover}
+                isPlaying={isPlaying}
+                setIsPlaying={setIsPlaying}
             />
         </div>
     );

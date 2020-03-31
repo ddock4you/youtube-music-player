@@ -66,9 +66,17 @@
             }
         }
     }
-    &--rtight-control {
-        display: inline-flex;
+    &--right-control {
+        display: flex;
         flex: none;
+        align-items: center;
+        .volume {
+            width: 40px;
+            height: 40px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
     }
     .hidden {
         // display: none;
