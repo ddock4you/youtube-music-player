@@ -17,21 +17,20 @@ const Header = () => {
             </h1>
             <nav className="menu">
                 <ul>
-                    {/* <li>
-                        <Link to="/">플레이 리스트</Link>
-                    </li> */}
-                    {/* <li>
-                        <Link to="/playlist">재생목록</Link>
-                    </li> */}
                     <li>
-                        <button type="button">
+                        <button
+                            type="button"
+                            onClick={() => {
+                                alert("준비중입니다.");
+                            }}
+                        >
                             <FontAwesomeIcon icon={faSearch} />
                             &nbsp; 검색하기
                         </button>
                     </li>
                 </ul>
             </nav>
-            <nav class="link-list">
+            <nav className="link-list">
                 <a
                     href="https://github.com/ddock4you/"
                     target="_blank"

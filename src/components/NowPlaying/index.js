@@ -28,20 +28,13 @@ const NowPlaying = ({
     const [volume, setVolume] = useState(0.5);
     const [beforeVolume, setBeforeVolume] = useState(null);
     const [duration, setDuration] = useState(0);
-    const [seek, setSeek] = useState(0);
     const [played, setPlayed] = useState(0);
-    const [playing, setPlaying] = useState(false);
-    const [seeking, setSeeking] = useState(true);
     const handleDuration = duration => {
-        console.log("onDuration", duration);
+        // console.log("onDuration", duration);
         setDuration(duration);
     };
 
     const player = useRef();
-
-    // const handleSeekChange = e => {
-    //     setPlayed({ played: parseFloat(e.target.value) });
-    // };
 
     const handlePlayMusic = () => {
         setIsPlaying(!isPlaying);
@@ -51,7 +44,6 @@ const NowPlaying = ({
 
     const handleProgress = state => {
         // console.log("onProgress", state.played);
-
         setPlayed(state.played);
     };
 
@@ -151,7 +143,11 @@ const NowPlaying = ({
                 >
                     <FontAwesomeIcon icon={faBackward} />
                 </button>
-                <button type="button" onClick={handlePlayMusic}>
+                <button
+                    type="button"
+                    className="center"
+                    onClick={handlePlayMusic}
+                >
                     <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
                 </button>
                 <button

@@ -1,5 +1,5 @@
 import React from "react";
-import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
+import { faPlay, faPause, faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faTimesCircle } from "@fortawesome/free-regular-svg-icons";
 // import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -116,7 +116,7 @@ const Music = ({
                                             </div>
                                             <div className="music--remove">
                                                 <FontAwesomeIcon
-                                                    icon={faTimesCircle}
+                                                    icon={faTimes}
                                                     onClick={e => {
                                                         e.stopPropagation();
                                                         deleteMusicList(

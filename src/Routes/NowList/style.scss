@@ -9,10 +9,10 @@
     @include tablet-m {
         flex-direction: column;
         height: 100%;
-        padding: 110px 25px 75px;
+        padding: 60px 25px 75px;
     }
     @include mobile-l {
-        padding: 110px 0 75px;
+        padding: 60px 0 75px;
     }
     .cover {
         flex: 4;
@@ -21,10 +21,10 @@
         padding-right: 50px;
         .cover-img {
             position: relative;
-            height: 100%;
+            height: calc(100% - 60px);
             @include tablet-m {
                 height: auto;
-                padding-bottom: 100%;
+                padding-bottom: 70%;
             }
             img {
                 position: absolute;

@@ -12,21 +12,42 @@
     background: #1d1d1d;
     color: #fff;
     z-index: 1;
+    @include mobile-l {
+        padding: 0 10px;
+    }
 
     &--left-control {
         display: flex;
         flex: none;
         align-items: center;
         padding-right: 20px;
+        @include mobile-l {
+            padding-right: 10px;
+        }
         button {
             width: 40px;
             height: 40px;
             color: #fff;
             cursor: pointer;
+            @include mobile-l {
+                width: 32px;
+                height: 32px;
+            }
+            &.center {
+                width: 60px;
+                height: 60px;
+                font-size: 22px;
+                @include mobile-l {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
         }
     }
     &-content--duration {
-        @include mobile-l {
+        margin-left: 15px;
+        font-size: 14px;
+        @include tablet-s {
             display: none;
         }
     }
@@ -42,6 +63,9 @@
             height: 48px;
             position: relative;
             overflow: hidden;
+            @include mobile-m {
+                display: none;
+            }
             img {
                 position: absolute;
                 top: 50%;
@@ -70,6 +94,9 @@
         display: flex;
         flex: none;
         align-items: center;
+        @include mobile-l {
+            display: none;
+        }
         .volume {
             width: 40px;
             height: 40px;
@@ -77,16 +104,12 @@
             font-size: 24px;
             cursor: pointer;
         }
+        input[type="range"] {
+            width: 80px;
+        }
     }
     .hidden {
         display: none;
-        position: absolute;
-        top: -500px;
-        left: 0;
-        // top: -99999px;
-        // left: -99999px;
-        width: 1px;
-        height: 1px;
     }
     .duration--bar {
         position: absolute;
