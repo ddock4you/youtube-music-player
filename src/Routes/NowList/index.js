@@ -108,6 +108,7 @@ const NowList = () => {
                 />
                 <MusicList
                     musicList={statePlayList}
+                    setMusicList={setStatePlayList}
                     deleteMusicList={deleteMusicList}
                     nowPlayingMusic={nowPlayingMusic}
                     setNowPlayingMusic={setNowPlayingMusic}
