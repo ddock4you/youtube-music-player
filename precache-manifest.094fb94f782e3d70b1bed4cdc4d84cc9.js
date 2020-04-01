@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "23d1a270602759e98f480b47e33dc3ba",
+    "revision": "ade013e6c4e572681a2f46a55eabecf1",
     "url": "/youtube-music-player/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/youtube-music-player/static/css/2.6d7d54d2.chunk.css"
   },
   {
-    "revision": "6beb8d1a059a43c5a56b",
+    "revision": "e5b00e2710f173223a00",
     "url": "/youtube-music-player/static/css/main.3be7b146.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/youtube-music-player/static/js/2.3b1fcda2.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6beb8d1a059a43c5a56b",
-    "url": "/youtube-music-player/static/js/main.72d739f8.chunk.js"
+    "revision": "e5b00e2710f173223a00",
+    "url": "/youtube-music-player/static/js/main.5ea77b16.chunk.js"
   },
   {
     "revision": "0bc584fa320458196c81",
