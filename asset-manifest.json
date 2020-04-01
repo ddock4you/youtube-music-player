@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/youtube-music-player/static/css/main.3be7b146.chunk.css",
+    "main.js": "/youtube-music-player/static/js/main.72d739f8.chunk.js",
+    "main.js.map": "/youtube-music-player/static/js/main.72d739f8.chunk.js.map",
+    "runtime-main.js": "/youtube-music-player/static/js/runtime-main.3de20c12.js",
+    "runtime-main.js.map": "/youtube-music-player/static/js/runtime-main.3de20c12.js.map",
+    "static/css/2.6d7d54d2.chunk.css": "/youtube-music-player/static/css/2.6d7d54d2.chunk.css",
+    "static/js/2.3b1fcda2.chunk.js": "/youtube-music-player/static/js/2.3b1fcda2.chunk.js",
+    "static/js/2.3b1fcda2.chunk.js.map": "/youtube-music-player/static/js/2.3b1fcda2.chunk.js.map",
+    "index.html": "/youtube-music-player/index.html",
+    "precache-manifest.569377273444d92d711842809d921ae0.js": "/youtube-music-player/precache-manifest.569377273444d92d711842809d921ae0.js",
+    "service-worker.js": "/youtube-music-player/service-worker.js",
+    "static/css/2.6d7d54d2.chunk.css.map": "/youtube-music-player/static/css/2.6d7d54d2.chunk.css.map",
+    "static/css/main.3be7b146.chunk.css.map": "/youtube-music-player/static/css/main.3be7b146.chunk.css.map",
+    "static/js/2.3b1fcda2.chunk.js.LICENSE.txt": "/youtube-music-player/static/js/2.3b1fcda2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3de20c12.js",
+    "static/css/2.6d7d54d2.chunk.css",
+    "static/js/2.3b1fcda2.chunk.js",
+    "static/css/main.3be7b146.chunk.css",
+    "static/js/main.72d739f8.chunk.js"
+  ]
+}
