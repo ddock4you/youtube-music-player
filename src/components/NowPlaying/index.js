@@ -50,7 +50,7 @@ const NowPlaying = ({
     const handlePlay = () => {};
 
     const handleProgress = state => {
-        console.log("onProgress", state.played);
+        // console.log("onProgress", state.played);
 
         setPlayed(state.played);
     };
@@ -94,7 +94,6 @@ const NowPlaying = ({
         if (mute === false) {
             setMute(!mute);
             setBeforeVolume(volume);
-            console.log(beforeVolume);
             setVolume(0);
         } else {
             setMute(!mute);
@@ -122,7 +121,6 @@ const NowPlaying = ({
                 playing={isPlaying}
                 ref={player}
                 onPlay={handlePlay}
-                onSeek={e => console.log("onSeek", e)}
                 onProgress={handleProgress}
             />
             <div className="duration--bar">

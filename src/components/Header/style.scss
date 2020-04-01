@@ -13,7 +13,7 @@ header {
     padding: 0 15px;
     background-color: #1d1d1d;
     z-index: 1;
-    nav {
+    .menu {
         margin: 0 auto;
         text-align: center;
         li {
@@ -24,12 +24,13 @@ header {
                 margin-right: 15px;
                 padding: 5px;
             }
-            a {
+            button {
                 font-family: "Spoqa Han Sans";
                 font-size: 20px;
                 font-weight: 500;
                 color: #888;
                 text-decoration: none;
+                cursor: pointer;
                 @include mobile-m {
                     font-size: 16px;
                 }
@@ -39,12 +40,24 @@ header {
             }
         }
     }
-    h2 {
+    .link-list {
+        display: flex;
         font-size: 62.5%;
+        justify-content: center;
+        align-items: center;
         a {
             display: block;
+            margin-right: 10px;
             color: #fff;
             font-size: 2.4em;
+            &:last-child {
+                margin-right: 0;
+            }
+            img {
+                margin-top: 5px;
+                width: 24px;
+                height: 24px;
+            }
         }
     }
 }
