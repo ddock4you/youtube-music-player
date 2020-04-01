@@ -71,8 +71,8 @@ const NowList = () => {
                     : thumbnails.medium.url
                     ? thumbnails.medium.url
                     : thumbnails.default.url;
-                console.log(music.id);
-                // addMusic(music);
+                console.log(statePlayList);
+
                 return addMusic(music);
             }
             // return console.log(video);

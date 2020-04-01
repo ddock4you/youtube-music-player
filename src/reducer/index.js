@@ -4,37 +4,34 @@ export const musicList = [
             name: "기본",
             list: [
                 {
-                    id: 0,
-                    title:
-                        "We Can't Stop - Miley Cyrus (Boyce Avenue feat. Bea Miller cover) on Spotify & Apple",
-                    singer: "Boyce Avenue",
-                    key: "uzgp65UnPxA",
-                    jacket:
-                        "https://i.ytimg.com/vi/uzgp65UnPxA/maxresdefault.jpg",
+                    id: 1585749814658,
+                    title: "dokiwa. (from dosii) - 샴푸의 요정",
+                    singer: "Mellowbeat Seeker",
+                    key: "_XSVrRK205Q",
+                    jacket: "https://i.ytimg.com/vi/_XSVrRK205Q/default.jpg",
                     bigJacket:
-                        "https://i.ytimg.com/vi/uzgp65UnPxA/maxresdefault.jpg",
-                    duration: "04:30"
+                        "https://i.ytimg.com/vi/_XSVrRK205Q/maxresdefault.jpg",
+                    duration: "03:31"
                 },
                 {
-                    id: 1,
-                    title: "Charlie Puth - Attention [Official Video]",
-                    singer: "Charlie Puth",
-                    key: "nfs8NYg7yQM",
-                    jacket: "https://i.ytimg.com/vi/nfs8NYg7yQM/hqdefault.jpg",
+                    id: 1585749885524,
+                    title: "roon - 추억 속 너에게 (Prod. KARXHE)",
+                    singer: "Mellowbeat Seeker",
+                    key: "wJuNJS9_b7A",
+                    jacket: "https://i.ytimg.com/vi/wJuNJS9_b7A/default.jpg",
                     bigJacket:
-                        "https://i.ytimg.com/vi/nfs8NYg7yQM/hqdefault.jpg",
-                    duration: "03:52"
+                        "https://i.ytimg.com/vi/wJuNJS9_b7A/maxresdefault.jpg",
+                    duration: "03:08"
                 },
                 {
-                    id: 2,
-                    title: "Pharrell Williams - Happy (Official Music Video)",
-                    singer: "PharrellWilliamsVEVO",
-                    key: "ZbZSe6N_BXs",
-                    jacket:
-                        "https://i.ytimg.com/vi/ZbZSe6N_BXs/maxresdefault.jpg",
+                    id: 1585749892614,
+                    title: "민민(minmin) - 차근차근(Slowly)",
+                    singer: "Mellowbeat Seeker",
+                    key: "4zAZfAukW8g",
+                    jacket: "https://i.ytimg.com/vi/4zAZfAukW8g/default.jpg",
                     bigJacket:
-                        "https://i.ytimg.com/vi/ZbZSe6N_BXs/maxresdefault.jpg",
-                    duration: "04:01"
+                        "https://i.ytimg.com/vi/4zAZfAukW8g/maxresdefault.jpg",
+                    duration: "03:01"
                 }
             ]
         }
