@@ -45,6 +45,9 @@ const NowPlaying = ({
     const handleProgress = state => {
         // console.log("onProgress", state.played);
         setPlayed(state.played);
+        if (state.played === 1) {
+            handleNextPlay(playingMusicIndex);
+        }
     };
 
     const playingMusicIndex = musicList.findIndex(
