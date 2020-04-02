@@ -1,4 +1,4 @@
-export const musicList = [
+export const MusicListData = [
     {
         base: {
             name: "기본",
