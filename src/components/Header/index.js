@@ -11,8 +11,11 @@ const Header = () => {
     return (
         <header>
             <h1 className="logo">
-                <Link to="/">
-                    <img src="/images/logo.svg" alt="로고" />
+                <Link to="/youtube-music-player">
+                    <img
+                        src="/youtube-music-player/images/logo.svg"
+                        alt="로고"
+                    />
                 </Link>
             </h1>
             <nav className="menu">
@@ -44,7 +47,7 @@ const Header = () => {
                     rel="noopener noreferrer"
                 >
                     <img
-                        src="/images/tistory_icon2.jpg"
+                        src="/youtube-music-player/images/tistory_icon2.jpg"
                         alt="티스토리 아이콘"
                     />
                 </a>
