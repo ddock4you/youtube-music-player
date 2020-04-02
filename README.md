@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# YouTube-Music-Player
 
-## Available Scripts
+프론트 엔드 개발자 지원을 하기 위한 포트폴리오입니다.</br>YouTube API와 React를 이용하여 음악 플레이어를 만들었습니다.
 
-In the project directory, you can run:
+[시연해보기](https://ddock4you.github.io/youtube-music-player/)
+
+## 주요 개발 스택
+
+React(hooks), npm, Sass
+
+## 특징
+
+### 1) 유튜브 url을 입력하여 음악 추가
+
+유튜브 영상 url을 입력하여 자신이 원하는 플레이 리스트를 만들 수 있습니다.
+
+### 2) 기본적인 음악 플레이어 기능
+
+재생, 일시정지, 이전목록, 다음목록 재생, 볼륨 조절
+
+### 3) 플레이 리스트 유지
+
+플레이 리스트는 사용자의 Local Storage에 저장되어 웹브라우저를 종료해도 플레이리스트가 계속 유지됩니다.
+
+### 4) 드래그를 통한 음악리스트 순서 변경
+
+선택한 음악을 드래그하여 간단하게 순서를 변경할 수 있습니다.
+
+## 실행 방법
+
+### `npm install`
+
+실행하여 필요한 라이브러리를 설치 후
 
 ### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+기본접속주소는 http://localhost:3001로 되어있습니다.
