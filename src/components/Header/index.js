@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import dotenv from "dotenv";
+
 import { Link } from "react-router-dom";
-// import { faGithub } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faProductHunt } from "@fortawesome/free-brands-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./style.scss";
+import SearchMusic from "../SearchMusic";
+
+dotenv.config();
 
 const Header = () => {
+    const [openSearch, setOpenSearch] = useState(false);
+
     return (
         <header>
             <h1 className="logo">
@@ -24,12 +30,13 @@ const Header = () => {
                         <button
                             type="button"
                             onClick={() => {
-                                alert("준비중입니다.");
+                                setOpenSearch(!openSearch);
                             }}
                         >
                             <FontAwesomeIcon icon={faSearch} />
                             &nbsp; 검색하기
                         </button>
+                        {openSearch && <SearchMusic />}
                     </li>
                 </ul>
             </nav>

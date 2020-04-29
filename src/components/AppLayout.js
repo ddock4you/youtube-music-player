@@ -3,7 +3,7 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Redirect
+    Redirect,
 } from "react-router-dom";
 
 import "../scss/reset.scss";
@@ -17,7 +17,7 @@ function App() {
         <Router>
             <Header />
             <Switch>
-                <Route exact path="/" component={NowList} />
+                <Route exact path="/" render={(props) => <NowList />} />
                 <Route exact path="/playlist" component={PlayList} />
                 <Route exact path="/search" component={Search} />
                 <Redirect from="*" to="/" />

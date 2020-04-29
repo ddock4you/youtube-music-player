@@ -28,13 +28,13 @@ const NowList = () => {
         localStorage.setItem("localPlayList", JSON.stringify(musicList));
     }, [musicList]);
 
-    const addMusic = music => {
+    const addMusic = (music) => {
         let addMusicList = musicList.concat(music);
         setMusicList(addMusicList);
         console.log(musicList);
     };
 
-    const getMovieInfo = async videoId => {
+    const getMovieInfo = async (videoId) => {
         try {
             const APIKEY = process.env.REACT_APP_APIKEY;
             const APIURL = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${APIKEY}&part=snippet,contentDetails,statistics,status`;
@@ -48,7 +48,7 @@ const NowList = () => {
                     key: "",
                     jacket: "",
                     bigJacket: "",
-                    duration: ""
+                    duration: "",
                 };
 
                 const { id } = video.data.items[0];
@@ -81,13 +81,13 @@ const NowList = () => {
         }
     };
 
-    const deleteMusicList = selectedMusic => {
+    const deleteMusicList = (selectedMusic) => {
         if (musicList.length === 1) {
             alert("플레이리스트에 최소 하나 이상의 음악이 있어야 합니다.");
             return;
         }
         const deleteMusic = musicList.filter(
-            music => music.key !== selectedMusic
+            (music) => music.key !== selectedMusic
         );
         setMusicList(deleteMusic);
     };
