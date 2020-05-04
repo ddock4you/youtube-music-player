@@ -3,10 +3,10 @@ import axios from "axios";
 import "./style.scss";
 import SearchMusicItem from "../SearchMusicItem";
 
-const SearchMusic = () => {
+const SearchMusic = ({ getMovieInfo, setUrl }) => {
     const [searchValue, setSearchValue] = useState("");
     const [searchList, setSearchList] = useState([]);
-    const [trySearching, setTrySearching] = useState(false);
+    // const [trySearching, setTrySearching] = useState(false);
 
     const optionParams = {
         q: searchValue,
@@ -42,7 +42,7 @@ const SearchMusic = () => {
         try {
             const searchResult = await axios.get(searchUrl);
             console.log(searchResult.data);
-            setTrySearching(true);
+            // setTrySearching(true);
             if (searchResult.status === 200) {
                 setSearchList(searchResult.data.items);
             }
@@ -69,9 +69,12 @@ const SearchMusic = () => {
                     searchList.map((item) => (
                         <SearchMusicItem
                             key={item.id.videoId}
+                            id={item.id.videoId}
                             jacket={item.snippet.thumbnails.default}
                             title={item.snippet.title}
                             artist={item.snippet.channelTitle}
+                            getMovieInfo={getMovieInfo}
+                            setUrl={setUrl}
                         />
                     ))
                 ) : (

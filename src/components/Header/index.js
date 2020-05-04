@@ -11,7 +11,7 @@ import SearchMusic from "../SearchMusic";
 
 dotenv.config();
 
-const Header = () => {
+const Header = ({ getMovieInfo, setUrl }) => {
     const [openSearch, setOpenSearch] = useState(false);
 
     return (
@@ -36,7 +36,12 @@ const Header = () => {
                             <FontAwesomeIcon icon={faSearch} />
                             &nbsp; 검색하기
                         </button>
-                        {openSearch && <SearchMusic />}
+                        {openSearch && (
+                            <SearchMusic
+                                getMovieInfo={getMovieInfo}
+                                setUrl={setUrl}
+                            />
+                        )}
                     </li>
                 </ul>
             </nav>

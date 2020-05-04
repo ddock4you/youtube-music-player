@@ -1,11 +1,23 @@
 import React from "react";
 
-const SearchMusicItem = ({ jacket, title, artist, key, id }) => {
+const SearchMusicItem = ({
+    jacket,
+    title,
+    artist,
+    id,
+    getMovieInfo,
+    setUrl,
+}) => {
+    const addSearchItem = (videoID) => {
+        alert(videoID);
+        getMovieInfo(videoID);
+    };
+
     return (
         <div
             className="search-music-item"
             onClick={() => {
-                alert(key);
+                addSearchItem(id);
             }}
         >
             <p className="search-music-item--thumbnail">

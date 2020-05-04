@@ -1,17 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./style.scss";
 
-const InputMusic = ({ getMovieinfo, musicList }) => {
-    const [url, setUrl] = useState("");
-
-    const onChangeUrl = e => {
+const InputMusic = ({ getMovieinfo, musicList, url, setUrl }) => {
+    const onChangeUrl = (e) => {
         setUrl(e.target.value);
     };
 
-    const inputUrl = e => {
+    const inputUrl = (e) => {
         e.preventDefault();
         // console.log(url);
         if (url.trim === "" && !url) {
@@ -30,7 +28,7 @@ const InputMusic = ({ getMovieinfo, musicList }) => {
             videoID = url.split("v=")[1];
         }
 
-        if (musicList.find(music => music.key === videoID)) {
+        if (musicList.find((music) => music.key === videoID)) {
             alert("이미 등록된 음악입니다.");
             return;
         }
