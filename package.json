@@ -21,6 +21,7 @@
         "react-scripts": "3.4.0",
         "react-youtube": "^7.9.0",
         "redux": "^4.0.5",
+        "redux-actions": "^2.6.5",
         "youtube-duration-format": "^0.2.0"
     },
     "homepage": "http://ddock4you.github.io/youtube-music-player/",

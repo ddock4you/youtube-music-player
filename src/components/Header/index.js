@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 import { Link } from "react-router-dom";
 import { faGithub, faProductHunt } from "@fortawesome/free-brands-svg-icons";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faSearch, faBlog } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./style.scss";
@@ -30,7 +30,8 @@ const Header = ({ getMovieInfo, setUrl }) => {
                         <button
                             type="button"
                             onClick={() => {
-                                setOpenSearch(!openSearch);
+                                // setOpenSearch(!openSearch);
+                                alert("준비중입니다.");
                             }}
                         >
                             <FontAwesomeIcon icon={faSearch} />
@@ -47,21 +48,18 @@ const Header = ({ getMovieInfo, setUrl }) => {
             </nav>
             <nav className="link-list">
                 <a
-                    href="https://github.com/ddock4you/"
+                    href="https://github.com/ddock4you/youtube-music-player"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
                     <FontAwesomeIcon icon={faGithub} />
                 </a>
                 <a
-                    href="https://redbeanmilk-dev.tistory.com/"
+                    href="https://ddock4you.netlify.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <img
-                        src="/youtube-music-player/images/tistory_icon2.jpg"
-                        alt="티스토리 아이콘"
-                    />
+                    <FontAwesomeIcon icon={faBlog} />
                 </a>
                 <a
                     href="http://ddock4you.ivyro.net/"
