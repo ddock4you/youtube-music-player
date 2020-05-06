@@ -14,7 +14,7 @@ import Search from "../Routes/Search";
 import axios from "axios";
 import dotenv from "dotenv";
 
-import { MusicListData } from "../reducer";
+import { MusicListData } from "../modules/defaultMusicListData";
 import youtubeDuration from "youtube-duration-format";
 
 dotenv.config();
