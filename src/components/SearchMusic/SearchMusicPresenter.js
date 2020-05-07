@@ -4,7 +4,6 @@ import SearchMusicItem from "../SearchMusicItem";
 
 const SearchMusicPresenter = ({
     getMovieInfo, // 손자
-    setUrl, // 손자
     onSubmitSearch,
     searchValue,
     onChangeSearch,
@@ -32,7 +31,6 @@ const SearchMusicPresenter = ({
                             title={item.snippet.title}
                             artist={item.snippet.channelTitle}
                             getMovieInfo={getMovieInfo}
-                            setUrl={setUrl}
                         />
                     ))
                 ) : (

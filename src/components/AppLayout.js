@@ -6,23 +6,20 @@ import {
     Redirect,
 } from "react-router-dom";
 
-import "../scss/reset.scss";
 import Header from "./Header";
 import NowList from "../Routes/NowList";
 import PlayList from "../Routes/PlayList";
 import Search from "../Routes/Search";
-import axios from "axios";
-import dotenv from "dotenv";
+import { getVideo } from "../lib/api";
 
 import { MusicListData } from "../modules/defaultMusicListData";
 import youtubeDuration from "youtube-duration-format";
+import "../scss/reset.scss";
 
-dotenv.config();
 function App() {
-    const defaultMusicList = MusicListData[0].base.list;
     const storageMusicList = localStorage.getItem("localPlayList")
         ? JSON.parse(localStorage.getItem("localPlayList"))
-        : defaultMusicList;
+        : MusicListData[0].base.list;
     const [musicList, setMusicList] = useState(storageMusicList);
     const [nowPlayingMusic, setNowPlayingMusic] = useState(musicList[0]);
     const [cover, setCover] = useState(musicList[0].bigJacket);
@@ -36,15 +33,11 @@ function App() {
     const addMusic = (music) => {
         let addMusicList = musicList.concat(music);
         setMusicList(addMusicList);
-        console.log(musicList);
     };
-    console.log(url);
 
     const getMovieInfo = async (videoId) => {
         try {
-            const APIKEY = process.env.REACT_APP_APIKEY;
-            const APIURL = `https://www.googleapis.com/youtube/v3/videos?id=${videoId}&key=${APIKEY}&part=snippet,contentDetails,statistics,status`;
-            const video = await axios.get(APIURL);
+            const video = await getVideo(videoId);
             console.log(video);
             if (video.status === 200 && video.data.items.length >= 1) {
                 const music = {

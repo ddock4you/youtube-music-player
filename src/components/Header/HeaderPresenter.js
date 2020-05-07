@@ -38,10 +38,7 @@ const Header = ({ getMovieInfo, setUrl }) => {
                             &nbsp; 검색하기
                         </button>
                         {openSearch && (
-                            <SearchMusic
-                                getMovieInfo={getMovieInfo}
-                                setUrl={setUrl}
-                            />
+                            <SearchMusic getMovieInfo={getMovieInfo} />
                         )}
                     </li>
                 </ul>

@@ -3,7 +3,7 @@ import axios from "axios";
 import "./style.scss";
 import SearchMusicPresenter from "./SearchMusicPresenter";
 
-const SearchMusicContainer = ({ getMovieInfo, setUrl }) => {
+const SearchMusicContainer = ({ getMovieInfo }) => {
     const [searchValue, setSearchValue] = useState("");
     const [searchList, setSearchList] = useState([]);
     // const [trySearching, setTrySearching] = useState(false);
@@ -54,7 +54,6 @@ const SearchMusicContainer = ({ getMovieInfo, setUrl }) => {
     return (
         <SearchMusicPresenter
             getMovieInfo={getMovieInfo} // 손자
-            setUrl={setUrl} // 손자
             onSubmitSearch={onSubmitSearch}
             searchValue={searchValue}
             onChangeSearch={onChangeSearch}
