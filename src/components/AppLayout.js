@@ -1,15 +1,7 @@
 import React, { useState, useEffect } from "react";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Redirect,
-} from "react-router-dom";
 
 import Header from "./Header";
 import NowList from "../Routes/NowList";
-import PlayList from "../Routes/PlayList";
-import Search from "../Routes/Search";
 import { getVideo } from "../lib/api";
 
 import { MusicListData } from "../modules/defaultMusicListData";
@@ -93,34 +85,23 @@ function App() {
     };
 
     return (
-        <Router>
+        <>
             <Header getMovieInfo={getMovieInfo} setUrl={setUrl} />
-            <Switch>
-                <Route
-                    exact
-                    path="/"
-                    render={(props) => (
-                        <NowList
-                            getMovieInfo={getMovieInfo}
-                            musicList={musicList}
-                            setMusicList={setMusicList}
-                            deleteMusicList={deleteMusicList}
-                            nowPlayingMusic={nowPlayingMusic}
-                            setNowPlayingMusic={setNowPlayingMusic}
-                            cover={cover}
-                            setCover={setCover}
-                            isPlaying={isPlaying}
-                            setIsPlaying={setIsPlaying}
-                            url={url}
-                            setUrl={setUrl}
-                        />
-                    )}
-                />
-                <Route exact path="/playlist" component={PlayList} />
-                <Route exact path="/search" component={Search} />
-                <Redirect from="*" to="/" />
-            </Switch>
-        </Router>
+            <NowList
+                getMovieInfo={getMovieInfo}
+                musicList={musicList}
+                setMusicList={setMusicList}
+                deleteMusicList={deleteMusicList}
+                nowPlayingMusic={nowPlayingMusic}
+                setNowPlayingMusic={setNowPlayingMusic}
+                cover={cover}
+                setCover={setCover}
+                isPlaying={isPlaying}
+                setIsPlaying={setIsPlaying}
+                url={url}
+                setUrl={setUrl}
+            />
+        </>
     );
 }
 

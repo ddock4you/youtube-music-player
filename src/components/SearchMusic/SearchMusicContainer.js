@@ -3,9 +3,10 @@ import axios from "axios";
 import "./style.scss";
 import SearchMusicPresenter from "./SearchMusicPresenter";
 
-const SearchMusicContainer = ({ getMovieInfo }) => {
+const SearchMusicContainer = ({ getMovieInfo, openSearch }) => {
     const [searchValue, setSearchValue] = useState("");
     const [searchList, setSearchList] = useState([]);
+    const [isSearch, setIsSearch] = useState(true);
     // const [trySearching, setTrySearching] = useState(false);
 
     const optionParams = {
@@ -46,6 +47,7 @@ const SearchMusicContainer = ({ getMovieInfo }) => {
             if (searchResult.status === 200) {
                 setSearchList(searchResult.data.items);
             }
+            setIsSearch(true);
         } catch (e) {
             return;
         }
@@ -58,6 +60,8 @@ const SearchMusicContainer = ({ getMovieInfo }) => {
             searchValue={searchValue}
             onChangeSearch={onChangeSearch}
             searchList={searchList}
+            openSearch={openSearch}
+            isSearch={isSearch}
         />
     );
 };

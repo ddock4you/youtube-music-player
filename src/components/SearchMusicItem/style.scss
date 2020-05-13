@@ -1,0 +1,34 @@
+@import "../../scss/mixins";
+
+.search-music-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &--thumbnail {
+        flex: none;
+        position: relative;
+        overflow: hidden;
+        width: 48px;
+        height: 48px;
+        background-color: #000;
+        img {
+            @include center-content;
+            max-height: 100%;
+        }
+    }
+    &--info {
+        flex: 1 1;
+        flex-direction: column;
+        padding-left: 15px;
+        overflow: hidden;
+        p {
+            @include skiptext;
+            &:first-child {
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

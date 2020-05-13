@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import dotenv from "dotenv";
 
-import { Link } from "react-router-dom";
 import { faGithub, faProductHunt } from "@fortawesome/free-brands-svg-icons";
 import { faSearch, faBlog } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,18 +10,14 @@ import SearchMusic from "../SearchMusic";
 
 dotenv.config();
 
-const Header = ({ getMovieInfo, setUrl }) => {
+const Header = ({ getMovieInfo }) => {
+    const searchInput = useRef(null);
     const [openSearch, setOpenSearch] = useState(false);
 
     return (
         <header>
             <h1 className="logo">
-                <Link to="/youtube-music-player">
-                    <img
-                        src="/youtube-music-player/images/logo.svg"
-                        alt="로고"
-                    />
-                </Link>
+                <img src="/youtube-music-player/images/logo.svg" alt="로고" />
             </h1>
             <nav className="menu">
                 <ul>
@@ -38,7 +33,10 @@ const Header = ({ getMovieInfo, setUrl }) => {
                             &nbsp; 검색하기
                         </button>
                         {openSearch && (
-                            <SearchMusic getMovieInfo={getMovieInfo} />
+                            <SearchMusic
+                                getMovieInfo={getMovieInfo}
+                                openSearch={openSearch}
+                            />
                         )}
                     </li>
                 </ul>
