@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/youtube-music-player/static/css/main.d15137c2.chunk.css",
-    "main.js": "/youtube-music-player/static/js/main.49d28745.chunk.js",
-    "main.js.map": "/youtube-music-player/static/js/main.49d28745.chunk.js.map",
+    "main.css": "/youtube-music-player/static/css/main.f3d0e2b9.chunk.css",
+    "main.js": "/youtube-music-player/static/js/main.b7a56918.chunk.js",
+    "main.js.map": "/youtube-music-player/static/js/main.b7a56918.chunk.js.map",
     "runtime-main.js": "/youtube-music-player/static/js/runtime-main.3de20c12.js",
     "runtime-main.js.map": "/youtube-music-player/static/js/runtime-main.3de20c12.js.map",
     "static/css/2.6d7d54d2.chunk.css": "/youtube-music-player/static/css/2.6d7d54d2.chunk.css",
-    "static/js/2.3b1fcda2.chunk.js": "/youtube-music-player/static/js/2.3b1fcda2.chunk.js",
-    "static/js/2.3b1fcda2.chunk.js.map": "/youtube-music-player/static/js/2.3b1fcda2.chunk.js.map",
+    "static/js/2.8dc11e37.chunk.js": "/youtube-music-player/static/js/2.8dc11e37.chunk.js",
+    "static/js/2.8dc11e37.chunk.js.map": "/youtube-music-player/static/js/2.8dc11e37.chunk.js.map",
     "index.html": "/youtube-music-player/index.html",
-    "precache-manifest.9636486f8456ef74492c411dcb90557f.js": "/youtube-music-player/precache-manifest.9636486f8456ef74492c411dcb90557f.js",
+    "precache-manifest.00ccb3cb38409550a0b4e522c03927ce.js": "/youtube-music-player/precache-manifest.00ccb3cb38409550a0b4e522c03927ce.js",
     "service-worker.js": "/youtube-music-player/service-worker.js",
     "static/css/2.6d7d54d2.chunk.css.map": "/youtube-music-player/static/css/2.6d7d54d2.chunk.css.map",
-    "static/css/main.d15137c2.chunk.css.map": "/youtube-music-player/static/css/main.d15137c2.chunk.css.map",
-    "static/js/2.3b1fcda2.chunk.js.LICENSE.txt": "/youtube-music-player/static/js/2.3b1fcda2.chunk.js.LICENSE.txt"
+    "static/css/main.f3d0e2b9.chunk.css.map": "/youtube-music-player/static/css/main.f3d0e2b9.chunk.css.map",
+    "static/js/2.8dc11e37.chunk.js.LICENSE.txt": "/youtube-music-player/static/js/2.8dc11e37.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3de20c12.js",
     "static/css/2.6d7d54d2.chunk.css",
-    "static/js/2.3b1fcda2.chunk.js",
-    "static/css/main.d15137c2.chunk.css",
-    "static/js/main.49d28745.chunk.js"
+    "static/js/2.8dc11e37.chunk.js",
+    "static/css/main.f3d0e2b9.chunk.css",
+    "static/js/main.b7a56918.chunk.js"
   ]
 }
