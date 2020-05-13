@@ -57,7 +57,7 @@ const Header = ({ getMovieInfo }) => {
                     <FontAwesomeIcon icon={faBlog} />
                 </a>
                 <a
-                    href="http://ddock4you.ivyro.net/"
+                    href="http://ddock4you.github.io"
                     target="_blank"
                     rel="noopener noreferrer"
                 >

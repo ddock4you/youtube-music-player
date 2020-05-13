@@ -9,7 +9,12 @@ const InputMusicPresenter = ({ inputUrl, onChangeUrl, url }) => {
         <form className="music-input" onSubmit={inputUrl}>
             <label>
                 <span>YouTube URL :</span>
-                <input type="text" value={url} onChange={onChangeUrl} />
+                <input
+                    type="text"
+                    value={url}
+                    onChange={onChangeUrl}
+                    placeholder="ex) https://www.youtube.com/watch?v=_XSVrRK205Q"
+                />
             </label>
             <button type="submit">
                 <FontAwesomeIcon icon={faPlus} />

@@ -24,7 +24,7 @@
         "redux-actions": "^2.6.5",
         "youtube-duration-format": "^0.2.0"
     },
-    "homepage": "http://ddock4you.github.io/youtube-music-player/",
+    "homepage": "https://ddock4you.github.io/youtube-music-player/",
     "scripts": {
         "start": "set PORT=3001 && react-scripts start",
         "build": "react-scripts build",
