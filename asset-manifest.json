@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/youtube-music-player/static/css/main.f3d0e2b9.chunk.css",
-    "main.js": "/youtube-music-player/static/js/main.b7a56918.chunk.js",
-    "main.js.map": "/youtube-music-player/static/js/main.b7a56918.chunk.js.map",
+    "main.js": "/youtube-music-player/static/js/main.fc85ba28.chunk.js",
+    "main.js.map": "/youtube-music-player/static/js/main.fc85ba28.chunk.js.map",
     "runtime-main.js": "/youtube-music-player/static/js/runtime-main.3de20c12.js",
     "runtime-main.js.map": "/youtube-music-player/static/js/runtime-main.3de20c12.js.map",
     "static/css/2.6d7d54d2.chunk.css": "/youtube-music-player/static/css/2.6d7d54d2.chunk.css",
     "static/js/2.8dc11e37.chunk.js": "/youtube-music-player/static/js/2.8dc11e37.chunk.js",
     "static/js/2.8dc11e37.chunk.js.map": "/youtube-music-player/static/js/2.8dc11e37.chunk.js.map",
     "index.html": "/youtube-music-player/index.html",
-    "precache-manifest.00ccb3cb38409550a0b4e522c03927ce.js": "/youtube-music-player/precache-manifest.00ccb3cb38409550a0b4e522c03927ce.js",
+    "precache-manifest.3f42585da1755aed6fa61b07bcc0f1a8.js": "/youtube-music-player/precache-manifest.3f42585da1755aed6fa61b07bcc0f1a8.js",
     "service-worker.js": "/youtube-music-player/service-worker.js",
     "static/css/2.6d7d54d2.chunk.css.map": "/youtube-music-player/static/css/2.6d7d54d2.chunk.css.map",
     "static/css/main.f3d0e2b9.chunk.css.map": "/youtube-music-player/static/css/main.f3d0e2b9.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.6d7d54d2.chunk.css",
     "static/js/2.8dc11e37.chunk.js",
     "static/css/main.f3d0e2b9.chunk.css",
-    "static/js/main.b7a56918.chunk.js"
+    "static/js/main.fc85ba28.chunk.js"
   ]
 }
